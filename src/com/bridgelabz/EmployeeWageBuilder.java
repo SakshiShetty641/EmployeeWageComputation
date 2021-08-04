@@ -1,7 +1,7 @@
 package com.bridgelabz;
 /**
  * @author Sakshi Shetty
- * Purpose - To declare a part time employee and calculate the daily wage of an Employee
+ * Purpose - To calculate the daily wage of an Employee using Switch-Case
  */
 public class EmployeeWageBuilder {
 	public static void main(String[] args) {
@@ -17,12 +17,16 @@ public class EmployeeWageBuilder {
 		 * Using Math.random method to generate random numbers 0, 1 and 2
 		 */
 		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-		if (empCheck == IS_FULLTIME)
-			empHrs = 8;
-		else if (empCheck == IS_PARTTIME)
-			empHrs = 4;
-		else
+		switch (empCheck) {
+		case 0: // Employee is absent
 			empHrs = 0;
+		case 1: // FullTime Employee
+			empHrs = 8;
+			break;
+		case 2: // PartTime Employee
+			empHrs = 4;
+			break;
+		}
 		/**
 		 * Calculating the daily employee wage of an employee
 		 */
