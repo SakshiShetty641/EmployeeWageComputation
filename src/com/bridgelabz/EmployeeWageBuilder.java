@@ -7,7 +7,7 @@ public class EmployeeWageBuilder {
 	public static void main(String[] args) {
 		System.out.println("Welcome To Employee Wage Computation Program");
 		// Declaring a constant
-		int IS_FULLTIME = 1;
+		int IS_FULLTIME = 1
 		int IS_PARTTIME = 2;
 		int Emp_Rate_PerHr = 20;
 		// Declaring a variables
