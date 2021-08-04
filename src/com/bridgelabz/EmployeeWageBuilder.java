@@ -13,9 +13,9 @@ public class EmployeeWageBuilder {
 		int empHrs = 0;
 		int empWage = 0;
 		/**
-		 * Using Math.random method to generate random numbers 0, 1 and 2
+		 * Using Math.random method to generate random numbers 0, 1
 		 */
-		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+		int empCheck = (int) Math.floor(Math.random() * 10) % 2;
 		if (empCheck == IS_FULLTIME)
 			empHrs = 8;  
 		else
