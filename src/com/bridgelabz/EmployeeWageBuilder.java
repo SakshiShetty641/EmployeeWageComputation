@@ -9,10 +9,10 @@ public class EmployeeWageBuilder {
 		// Declaring a constant
 		int IS_FULLTIME = 1;
 		int Emp_Rate_PerHr = 20;
-        // Declaring a variables
+                // Declaring a variables
 		int empHrs = 0;
 		int empWage = 0;
-        /**
+                /**
 		 * Using Math.random method to generate random numbers 0, 1 and 2
 		 */
 		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
