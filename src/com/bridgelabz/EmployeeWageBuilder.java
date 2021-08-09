@@ -1,7 +1,7 @@
 package com.bridgelabz;
 /**
  * @author Sakshi Shetty
- * Purpose - Calculating wages for a total of working hours of 100 or max days of 20 in a month
+ * Purpose - Employee Wage Computation using OOPS Concepts
  */
 public class EmployeeWageBuilder {
 	public static final int IS_FULLTIME = 1;
@@ -10,11 +10,9 @@ public class EmployeeWageBuilder {
 	public static final int NO_WORKINGDAYS = 20;
 	public static final int MAX_HRS_MONTH = 100;
 
-	public static void main(String[] args) {
-		System.out.println("Welcome To Employee Wage Computation Program");
-		// Declaring a variables
+	public static int computeWage() {
+		// Declaring the variables
 		int empHrs = 0;
-		int empWage = 0;
 		int totalEmpWage = 0;
 		int totalEmpHrs = 0;
 		int totalWorkingDays = 0;
@@ -40,5 +38,12 @@ public class EmployeeWageBuilder {
 		}
 		totalEmpWage = totalEmpHrs * Emp_Rate_PerHr;
 		System.out.println("Total Wages is : " + totalEmpWage);
+		return totalEmpWage;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Welcome To Employee Wage Computation Program");
+		computeWage();
+
 	}
 }
