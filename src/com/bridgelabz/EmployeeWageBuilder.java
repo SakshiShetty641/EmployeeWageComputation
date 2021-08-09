@@ -10,7 +10,7 @@ public class EmployeeWageBuilder {
 	public static final int NO_WORKINGDAYS = 20;
 	public static final int MAX_HRS_MONTH = 100;
 
-	public static int computeWage() {
+public static int computeWage() {
 		// Declaring the variables
 		int empHrs = 0;
 		int totalEmpWage = 0;
