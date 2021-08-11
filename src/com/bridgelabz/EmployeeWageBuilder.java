@@ -6,8 +6,8 @@ package com.bridgelabz;
 public class EmployeeWageBuilder {
 	public static final int IS_FULLTIME = 1;
 	public static final int IS_PARTTIME = 2;
-
 	public static int computeEmpWage(String company, int empRatePerHour, int noOfWorkingDays, int maxHoursPerMonth) {
+
 		// Declaring the variables
 		int empHrs = 0;
 		int totalEmpHrs = 0;
