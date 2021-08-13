@@ -7,7 +7,7 @@ package com.bridgelabz;
  */
 public class EmployeeWageBuilder {
 	public static final int IS_FULLTIME = 1;
-	public static final int IS_PARTTIME = 2;
+	public static final int IS_PARTTIME = 2
 
 	private final String company;
 	private final int empRatePerHour;
@@ -23,10 +23,10 @@ public class EmployeeWageBuilder {
 		this.totalEmpWage = totalEmpWage;
 	}
 
-	/**
+  /**
 	 * This method is used to compute the employee wage
 	 */
-	public void computeWage() {
+public void computeWage() {
 		int empHrs = 0;
 		int totalEmpHrs = 0;
 		int totalWorkingDays = 0;
