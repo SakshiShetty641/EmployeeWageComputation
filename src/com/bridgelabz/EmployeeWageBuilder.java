@@ -7,7 +7,7 @@ package com.bridgelabz;
  */
 public class EmployeeWageBuilder {
 	public static final int IS_FULLTIME = 1;
-	public static final int IS_PARTTIME = 2;
+	public static final int IS_PARTTIME = 2
 
 	private int numOfCompany = 0;
 
@@ -30,10 +30,10 @@ public class EmployeeWageBuilder {
 		}
 	}
 
-	/**
+  /**
 	 * This method is used to compute the employee wage
 	 */
-	public int computeWage(EmployeeWage employeeWage) {
+public int computeWage(EmployeeWage employeeWage) {
 		int empHrs = 0;
 		int totalEmpHrs = 0;
 		int totalWorkingDays = 0;
