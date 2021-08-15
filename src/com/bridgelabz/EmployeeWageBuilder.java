@@ -1,6 +1,6 @@
 package com.bridgelabz;
 /**
- * Purpose - To save total wage for each company
+ * Purpose - To manage employee wage for multiple companies
  * @author Sakshi Shetty
  * @version 16.0
  * @since 2021-08-13
@@ -9,31 +9,38 @@ public class EmployeeWageBuilder {
 	public static final int IS_FULLTIME = 1;
 	public static final int IS_PARTTIME = 2;
 
-	private final String company;
-	private final int empRatePerHour;
-	private final int noOfWorkingDays;
-	private final int maxHoursPerMonth;
-	private int totalEmpWage;
+	private int numOfCompany = 0;
 
-	public EmployeeWageBuilder(String company, int empRatePerHour, int noOfWorkingDays, int maxHoursPerMonth) {
-		this.company = company;
-		this.empRatePerHour = empRatePerHour;
-		this.noOfWorkingDays = noOfWorkingDays;
-		this.maxHoursPerMonth = maxHoursPerMonth;
-		this.totalEmpWage = totalEmpWage;
+	private EmployeeWage[] employeeWageArray;
+
+	public EmployeeWageBuilder() {
+		employeeWageArray = new EmployeeWage[10];
+	}
+
+	public void addCompanyWage(String companyName, int maxHoursPerMonth, int noOfWorkingDays, int empRatePerHour) {
+		employeeWageArray[numOfCompany] = new EmployeeWage(companyName, maxHoursPerMonth, noOfWorkingDays,
+				empRatePerHour);
+		numOfCompany++;
+	}
+
+	public void computeWage() {
+		for (int i = 0; i < numOfCompany; i++) {
+			employeeWageArray[i].setTotalWage(this.computeWage(employeeWageArray[i]));
+			System.out.println(employeeWageArray[i]);
+		}
 	}
 
 	/**
 	 * This method is used to compute the employee wage
 	 */
-	public void computeWage() {
+	public int computeWage(EmployeeWage employeeWage) {
 		int empHrs = 0;
 		int totalEmpHrs = 0;
 		int totalWorkingDays = 0;
 		/**
 		 * Using Math.random method to generate random numbers 0, 1 and 2
 		 */
-		while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < noOfWorkingDays) {
+		while (totalEmpHrs <= employeeWage.maxHoursPerMonth && totalWorkingDays < employeeWage.noOfWorkingDays) {
 			totalWorkingDays++;
 			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 			switch (empCheck) {
@@ -49,26 +56,20 @@ public class EmployeeWageBuilder {
 
 			totalEmpHrs += empHrs;
 			System.out.println("Day " + totalWorkingDays + " : Employee worked : " + empHrs + " Hours ");
+
 		}
-		totalEmpWage = totalEmpHrs * empRatePerHour;
-		System.out.println("Total Wages is : " + totalEmpWage);
-
-	}
-
-	@Override
-	public String toString() {
-		return " Total Employee Wage" + company + " : " + totalEmpWage;
+		totalEmpHrs += empHrs;
+		System.out.println("Day#:" + totalWorkingDays + "Emp hr:" + empHrs);
+		return totalEmpHrs * employeeWage.empRatePerHour;
 
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome To Employee Wage Computation Program");
-		EmployeeWageBuilder dmart = new EmployeeWageBuilder("Dmart", 20, 2, 10);
-		EmployeeWageBuilder reliance = new EmployeeWageBuilder("Reliance", 10, 4, 20);
-		dmart.computeWage();
-		System.out.println(dmart);
-		reliance.computeWage();
-		System.out.println(reliance);
-
+		EmployeeWageBuilder wage = new EmployeeWageBuilder();
+		wage.addCompanyWage("Dmart", 100, 20, 100);
+		wage.addCompanyWage("Reliance", 100, 20, 100);
+		wage.computeWage();
 	}
+
 }
